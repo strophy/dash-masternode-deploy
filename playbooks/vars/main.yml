@@ -5,7 +5,7 @@ dash_user: dash
 users:
   - username: '{{ dash_user }}'
     ssh_key:
-      - "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDEBoxP2+9NW3/oze6eA5lwa70mX5RV4Q4uTA5Lp5LoWzR10h8f1g91qdZaJIjnsrFXGq6JRDnFcwd3qQYwpAX7BRpf8vCiDy3jdmmlVFdGwC9SEBIVJX8PpEKeJSIfM8ugRM3Cc2bg3hrXZMFLjz/ko9BiP7VUsIx2M3wxskvrQfzO2m2FTdr3sRNdh38m+Ik/p7bpicJ3lfhh3pjrTgeUY9/GIIpukbeBDJZ+7tKffpa97PLZexQRkWJxxDKD8Zg2mu+TNXm4cW7D3M7bj9idGsYtEqD9A00G7CPu12url0PUEwkonCH9Hi+2TAgG11m6Eb2MwB44pNYQfOTSsazhJj1y4rQ2aQIBKXROY59bJwBEXBIgrphw0QFM0Udl5EtbuOlm8agR0SEOxJv2yXpAzFqGtjzkE2ydRZuEvNoLR7TYZF1VUegZq89rYt2j7d2/pn7jEWx+4aNe8ancZLo10s3x9lVRjMyiPlZdNiIXYGeQurffnR7U1Zag2O5iWxrRvdHOsA69bDBXNqG0WKjITItsoBhN0FUX77S1+0NgZLtDfXk1x+CMMb9ZasrO+6ktLSgFORRlY8TIIbuDd/R+0mfiulwT0fIPiIKu/x+X+WbW2RCI97cwZtri/9N6yQXVZAuYBpVYI6exkuWggqvl8O+sCFjX0MEW8+zji1Uw1w=="
+      - ''
 
 security_sudoers_passwordless:
   - '{{ dash_user }}'

@@ -4,7 +4,7 @@ all:
   hosts:
     # Add hosts here
     45.32.136.14:
-      ansible_user: dash
-      #ansible_password: 'v1F@bFL*Uo-x=g2P'
+      ansible_user: root
+      ansible_password: ''
   vars:
     ansible_python_interpreter: /usr/bin/python3
