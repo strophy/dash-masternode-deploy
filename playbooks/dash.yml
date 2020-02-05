@@ -1,0 +1,36 @@
+---
+
+- name: Set up environment
+  hosts: all
+  become: true
+  tags: environment
+  vars_files:
+    - vars/main.yml
+  vars:
+    pip_install_packages:
+      - name: setuptools
+      - name: docker
+  roles:
+    - singleplatform-eng.users
+    - geerlingguy.swap
+    - geerlingguy.security
+    - geerlingguy.firewall
+    - geerlingguy.pip
+    - geerlingguy.docker
+
+- name: Set up masternode
+  hosts: all
+  become: true
+  tags: masternode
+  vars_files:
+    - vars/main.yml
+  tasks:
+  - name: Pull docker setup repository
+    git:
+      repo: 'https://github.com/strophy/dash-masternode-docker.git'
+      dest: /home/dash/dash-masternode-docker
+  - name: Deploy docker setup # Doesn't work due to incorrect pip3 version
+    docker_compose:
+      project_src: /home/dash/dash-masternode-docker
+      state: present
+      restarted: yes

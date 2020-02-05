@@ -1,0 +1,8 @@
+---
+
+- src: geerlingguy.swap
+- src: geerlingguy.security
+- src: geerlingguy.firewall
+- src: geerlingguy.pip
+- src: geerlingguy.docker
+- src: singleplatform-eng.users
