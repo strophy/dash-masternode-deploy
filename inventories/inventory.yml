@@ -6,5 +6,7 @@ all:
     45.32.136.14:
       ansible_user: root
       ansible_password: ''
+      #ansible_ssh_private_key_file: /Users/dash/.ssh/id_rsa
+
   vars:
     ansible_python_interpreter: /usr/bin/python3
