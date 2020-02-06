@@ -6,21 +6,23 @@
   tags: environment
   vars_files:
     - vars/main.yml
-  vars:
-    pip_install_packages:
-      - name: setuptools
-      - name: docker
+  pre_tasks:
+  - name: Update and upgrade apt packages
+    become: true
+    apt:
+      upgrade: yes
+      update_cache: yes
   roles:
     - singleplatform-eng.users
     - geerlingguy.swap
     - geerlingguy.security
     - geerlingguy.firewall
-    - geerlingguy.pip
     - geerlingguy.docker
 
 - name: Set up masternode
   hosts: all
   become: true
+  become_user: '{{ dash_user }}'
   tags: masternode
   vars_files:
     - vars/main.yml
@@ -29,8 +31,7 @@
     git:
       repo: 'https://github.com/strophy/dash-masternode-docker.git'
       dest: /home/dash/dash-masternode-docker
-  - name: Deploy docker setup # Doesn't work due to incorrect pip3 version
-    docker_compose:
-      project_src: /home/dash/dash-masternode-docker
-      state: present
-      restarted: yes
+  - name: Run masternode setup
+    shell:
+      chdir: /home/dash/dash-masternode-docker/
+      cmd: dash.sh

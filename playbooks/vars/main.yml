@@ -7,7 +7,9 @@ users:
     ssh_key:
       - ''
 
+
 security_sudoers_passwordless:
   - '{{ dash_user }}'
 docker_users:
   - '{{ dash_user }}'
+docker_install_compose: true
