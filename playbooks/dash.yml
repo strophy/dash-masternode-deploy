@@ -18,6 +18,16 @@
     - geerlingguy.security
     - geerlingguy.firewall
     - geerlingguy.docker
+  post_tasks:
+  - name: Download k14s installer
+    get_url: 
+      url: https://k14s.io/install.sh 
+      dest: /tmp/
+      mode: 0755
+  - name: Execute k14s installer
+    shell:
+      cmd: ./install.sh
+      chdir: /tmp/
 
 - name: Set up masternode
   hosts: all
@@ -34,4 +44,4 @@
   - name: Run masternode setup
     shell:
       chdir: /home/dash/dash-masternode-docker/
-      cmd: dash.sh
+      cmd: ./dash.sh
