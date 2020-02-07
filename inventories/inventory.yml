@@ -3,9 +3,10 @@
 all:
   hosts:
     # Add hosts here
-    45.32.136.14:
+    1.2.3.4:
       ansible_user: root
       ansible_password: ''
+      #ansible_user: dash
       #ansible_ssh_private_key_file: /Users/dash/.ssh/id_rsa
 
   vars:
