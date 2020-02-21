@@ -16,11 +16,11 @@ This tool sets up a remote host with the environment needed to deploy a Dash mas
 
   - `sudo apt install python3`
 
- - Ansible
+- Ansible
+
+  Ansible repository may also be required depending on OS
  
- Ansible repository may also be required depending on OS
- 
-  - `sudo apt install ansible'
+  - `sudo apt install ansible`
   
 ## Download
 
